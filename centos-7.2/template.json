@@ -24,6 +24,7 @@
     }
   ],
   "post-processors": [
+  [
     {
       "type": "vagrant",
       "override": {
@@ -34,8 +35,29 @@
           "output": "centos-7-2-x64-vmware.box"
         }
       }
+    },
+    {
+      "type": "atlas",
+      "only": ["vmware-iso"],
+      "artifact": "jonasrosland/centos-7.2",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "vmware_desktop",
+        "version": "0.0.1"
+      }
+    },
+    {
+      "type": "atlas",
+      "only": ["virtualbox-iso"],
+      "artifact": "jonasrosland/centos-7.2",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "virtualbox",
+        "version": "0.0.1"
+      }
     }
-  ],
+  ]
+],
   "builders": [
     {
       "type": "virtualbox-iso",
