@@ -19,13 +19,6 @@
             "scripts/vmware.sh",
             "scripts/cleanup.sh"
           ]
-        },
-        "hyperv": {
-          "scripts": [
-            "scripts/base.sh",
-            "scripts/vagrant.sh",
-            "scripts/cleanup.sh"
-          ]
         }
       }
     }
@@ -70,30 +63,6 @@
     },
     {
       "type": "vmware-iso",
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "10s",
-      "disk_size": 40520,
-      "guest_os_type": "centos-64",
-      "http_directory": "http",
-      "iso_checksum": "b9e2480ca2f1b17f27c03f2cf31c4920d5cc70bf",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://mirror.net.cen.ct.gov/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1511.iso",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
-      "tools_upload_flavor": "linux",
-      "vmx_data": {
-        "memsize": "512",
-        "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
-      }
-    },
-    {
-      "type": "hyperv",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
